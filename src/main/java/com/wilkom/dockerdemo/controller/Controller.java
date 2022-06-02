@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class Controller {
 
-    @GetMapping("/")
+    @GetMapping
     public String hello() {
         InetAddress ip;
         String hostname = "";
@@ -20,9 +20,6 @@ public class Controller {
             ip = InetAddress.getLocalHost();
             hostname = ip.getHostName();
             hostip = ip.toString();
-            System.out.println("Your current IP address : " + hostip);
-            System.out.println("Your current Hostname : " + hostname);
-
         } catch (UnknownHostException e) {
 
             e.printStackTrace();
